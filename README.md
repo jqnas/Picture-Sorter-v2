@@ -2,7 +2,9 @@
 
 A modern windows application based on .NET 10.0 and WPF that allows you to view, check and sort your pictures into pre-defined folders (destinations).
 
-*Uses [LinkingMountainsImageZoomWPF](https://github.com/BRIZEIUM/LinkingMountainsImageZoomWPF) to display images.*
+*Uses [LinkingMountainsImageZoomWPF](https://github.com/BRIZEIUM/LinkingMountainsImageZoomWPF) to display images which is licensed under the MIT license.*
+
+![Picture-Sorter-v2](Picture-Sorter-v2.png)
 
 ## Features
 
@@ -49,4 +51,4 @@ Automatically recognized image raw file types:
 > [!CAUTION]
 > ### Image deletion warning
 > 
-> When using the move image to trash feature on files that are located on a network drive, the images will be deleted permanantly or handled by the remote drive (e.g. if uisng a NAS). Be careful!
+> When using the move image to trash feature on files that are located on a network drive, the images will be deleted permanantly or handled by the remote drive (e.g. if using a NAS). Be careful!
