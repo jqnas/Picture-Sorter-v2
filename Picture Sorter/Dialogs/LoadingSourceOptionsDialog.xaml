@@ -1,0 +1,124 @@
+﻿<Window x:Class="Picture_Sorter.Dialogs.LoadingSourceOptionsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Picture_Sorter.Dialogs"
+        mc:Ignorable="d"
+        Height="320" Width="600"
+        Padding="20"
+        AllowDrop="False"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Open source options"
+        Icon="/Icons/Picture.ico"
+        Background="{DynamicResource AppBackgroundSecondary}"
+        KeyDown="Window_KeyDown">
+
+    <Grid Margin="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Load Recursive CheckBox -->
+        <CheckBox x:Name="RecursiveCheckBox"
+                  Style="{DynamicResource ModernCheckBox}"
+                  Grid.Column="0" Grid.Row="0"
+                  Content="Recursively"
+                  IsChecked="{Binding LoadRecursive, Mode=TwoWay}"
+                  TabIndex="1"
+                  ToolTip="Load sources recursive"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  KeyDown="CheckBox_KeyDown"/>
+
+        <!-- Add sources CheckBox -->
+        <CheckBox x:Name="AddCheckBox"
+                  Style="{DynamicResource ModernCheckBox}"
+                  Grid.Column="1" Grid.Row="0"
+                  Content="Add sources"
+                  IsChecked="{Binding AddSources, Mode=TwoWay}"
+                  TabIndex="2"
+                  ToolTip="Add sources to existing ones"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  KeyDown="CheckBox_KeyDown"/>
+
+        <!-- Find raws sources CheckBox -->
+        <CheckBox x:Name="FindRawsCheckBox"
+                  Style="{DynamicResource ModernCheckBox}"
+                  Grid.Column="0" Grid.Row="1"
+                  Content="Link raws"
+                  IsChecked="{Binding FindRaws, Mode=TwoWay}"
+                  TabIndex="3"
+                  ToolTip="Link raws (may takes some time)"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  KeyDown="CheckBox_KeyDown"/>
+
+        
+        <!-- Filter and sorting -->
+        <!-- Filter combo box -->
+        <ComboBox x:Name="FileTypeFilterBox"
+                  Grid.Column="0" Grid.Row="2"
+                  Style="{DynamicResource ModernComboBoxStyle}"
+                  ItemsSource="{Binding ImageTypes}"
+                  SelectedItem="{Binding ImageType}"
+                  TabIndex="4"
+                  Margin="40,0"
+                  ToolTip="Select file type"
+                  KeyDown="ComboBox_KeyDown"/>
+
+        <!-- Order combo box -->
+        <ComboBox x:Name="FileOrderBox"
+                  Grid.Column="1" Grid.Row="2"
+                  Style="{DynamicResource ModernComboBoxStyle}"
+                  ItemsSource="{Binding ImageOrderTypes}"
+                  SelectedItem="{Binding ImageOrderType}"
+                  TabIndex="5"
+                  Margin="40,0"
+                  ToolTip="Select loading order"
+                  KeyDown="ComboBox_KeyDown"/>
+
+
+        <!-- Buttons -->
+        <!-- OK Button -->
+        <Button x:Name="OkBtn"
+                Grid.Column="0" Grid.Row="3"
+                Style="{DynamicResource PrimaryButton}"
+                Width="150" Height="50"
+                Margin="10,10,10,0"
+                ToolTip="OK"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                TabIndex="6"
+                Click="OkBtn_Click">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="OK" FontFamily="{DynamicResource DefaultFont}" FontSize="20" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <!-- Cancel Button -->
+        <Button x:Name="CancelBtn"
+                Grid.Column="1" Grid.Row="3"
+                Style="{DynamicResource RedButton}"
+                Width="150" Height="50"
+                Margin="10,10,10,0"
+                ToolTip="OK"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                TabIndex="7"
+                Click="CancelBtn_Click">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Cancel" FontFamily="{DynamicResource DefaultFont}" FontSize="20" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+    
+</Window>

@@ -1,0 +1,261 @@
+﻿<ResourceDictionary x:Class="Picture_Sorter.WindowStyle"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="PicturSorterWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="45"
+                              CornerRadius="4"
+                              GlassFrameThickness="0"
+                              NonClientFrameEdges="None"
+                              ResizeBorderThickness="5"
+                              UseAeroCaptionButtons="False"/>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0,45,0,0">
+                            <AdornerDecorator>
+                                <ContentPresenter/>
+                            </AdornerDecorator>
+                        </Border>
+
+                        <Border Grid.Row="0"
+                                Height="45"
+                                VerticalAlignment="Top"
+                                BorderThickness="1.5"
+                                BorderBrush="{DynamicResource TextSecondary}">
+
+                            <StackPanel>
+
+                                <!--Window Bar-->
+                                <DockPanel x:Name="WindowTopBar"
+                                           Height="42"
+                                           LastChildFill="True"
+                                           Background="{DynamicResource AppBackgroundSecondary}">
+
+                                    <!-- App Icon -->
+                                    <Image Source="/Icons/picture.ico"
+                                           DockPanel.Dock="Left"
+                                           Margin="10"
+                                           VerticalAlignment="Center"/>
+
+                                    <!-- App Name -->
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               DockPanel.Dock="Left"
+                                               Foreground="{DynamicResource TextPrimary}"
+                                               FontFamily="{DynamicResource DefaultFont}"
+                                               FontSize="20" 
+                                               VerticalAlignment="Center"/>
+
+                                    <!-- Search Button -->
+                                    <ToggleButton x:Name="SerachBtn"
+                                                  DockPanel.Dock="Left"
+                                                  Style="{DynamicResource WindowToolToggleButton}"
+                                                  IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBoolConvertor}}"
+                                                  ToolTip="Search [Ctrl+F]"
+                                                  IsChecked="{Binding IsSearchVisible, Mode=OneWay}"
+                                                  Width="32" Height="32"
+                                                  TabIndex="21"
+                                                  Padding="4" Margin="25,5,5,5"
+                                                  WindowChrome.IsHitTestVisibleInChrome="True"
+                                                  Tag="{DynamicResource ToolButtonBackgroundHover}"
+                                                  Click="SearchBtn_Click">
+                                        <Image Source="{DynamicResource SearchIcon}"/>
+                                    </ToggleButton>
+
+                                    <!-- Jump to Button -->
+                                    <Button x:Name="JumpToBtn"
+                                            DockPanel.Dock="Left"
+                                            Style="{DynamicResource WindowToolButton}"
+                                            IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBoolConvertor}}"
+                                            ToolTip="Jump to image [Ctrl+J]"
+                                            Width="32" Height="32"
+                                            TabIndex="21"
+                                            Padding="4" Margin="5,5,5,5"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Tag="{DynamicResource ToolButtonBackgroundHover}"
+                                            Click="JumpToBtn_Click">
+                                        <Image Source="{DynamicResource NextImageIcon}" Margin="1"/>
+                                    </Button>
+
+                                    <!-- Window Tool Buttons-->
+                                    <!-- Close Button -->
+                                    <Button x:Name="CloseBtn"
+                                            DockPanel.Dock="Right"
+                                            Style="{DynamicResource WindowToolButton}"
+                                            ToolTip="Close"
+                                            Padding="12.5"
+                                            Width="40" Height="40"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Tag="{DynamicResource RedToolButtonBackgroundHover}"
+                                            Click="CloseBtn_Click">
+                                        <Image Source="{DynamicResource CloseIcon}"/>
+                                    </Button>
+
+                                    <!-- Maximize Button -->
+                                    <Button x:Name="MaximizeBtn"
+                                            DockPanel.Dock="Right"
+                                            Style="{DynamicResource WindowToolButton}"
+                                            ToolTip="Maximize"
+                                            Padding="12.5"
+                                            Width="40" Height="40"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Tag="{DynamicResource ToolButtonBackgroundHover}"
+                                            Click="MaximizeBtn_Click">
+                                        <Image Source="{DynamicResource MaximizeIcon}"/>
+                                    </Button>
+
+                                    <!-- Minimize Button -->
+                                    <Button x:Name="MinimizeBtn"
+                                            DockPanel.Dock="Right"
+                                            Style="{DynamicResource WindowToolButton}"
+                                            ToolTip="Minimize"
+                                            Padding="12.5"
+                                            Width="40" Height="40"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Tag="{DynamicResource ToolButtonBackgroundHover}"
+                                            Click="MinimizeBtn_Click">
+                                        <Image Source="{DynamicResource MinimizeIcon}"/>
+                                    </Button>
+
+                                    <!-- Theme switcher -->
+                                    <ToggleButton x:Name="ThemeSwitcherBtn"
+                                                  DockPanel.Dock="Right"
+                                                  Style="{DynamicResource ThemeToggleButton}"
+                                                  IsChecked="True"
+                                                  Width="32" Height="32"
+                                                  Padding="4" Margin="5,5,25,5"
+                                                  TabIndex="22"
+                                                  WindowChrome.IsHitTestVisibleInChrome="True"
+                                                  Tag="{DynamicResource ToolButtonBackgroundHover}"
+                                                  Click="ThemeSwitcherBtn_Click">
+                                        <Image Source="{DynamicResource ThemeSwitcherIcon}"/>
+                                    </ToggleButton>
+
+                                    <!--Help Icon -->
+                                    <TextBlock Text=" ? "
+                                               DockPanel.Dock="Right"
+                                               Foreground="{DynamicResource TextPrimary}"
+                                               FontFamily="{DynamicResource DefaultFont}"
+                                               FontSize="20" 
+                                               Margin="0,0,25,0"
+                                               WindowChrome.IsHitTestVisibleInChrome="True"
+                                               VerticalAlignment="Center">
+                                        
+                                        <TextBlock.ToolTip>
+                                            <TextBlock VerticalAlignment="Center"
+                                                       Background="Transparent"
+                                                       FontFamily="{DynamicResource DefaultFont}" FontSize="12"
+                                                       Foreground="{DynamicResource TextStrong}"
+                                                       TextTrimming="CharacterEllipsis">
+                                                <Run Text="Command arguments" FontWeight="Bold"/>
+                                                <LineBreak/>
+                                                <Run Text="--dark-mode"/>
+                                                <LineBreak/>
+                                                <Run Text="--light-mode"/>
+                                                <LineBreak/>
+                                                <Run Text="--mode-move"/>
+                                                <LineBreak/>
+                                                <Run Text="--mode-copy"/>
+                                                <LineBreak/>
+                                                <Run Text="--full-resolution"/>
+                                            </TextBlock>
+                                        </TextBlock.ToolTip>
+                                        
+                                    </TextBlock>
+
+                                    <!-- Folder loading -->
+                                    <StackPanel Orientation="Horizontal"
+                                                DockPanel.Dock="Bottom"
+                                                Height="35"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+
+                                        <!-- Load folder Button -->
+                                        <Button x:Name="LoadFolderBtn"
+                                                Style="{DynamicResource GrayButton}"
+                                                IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBoolConvertor}}"
+                                                Padding="10,5"
+                                                Margin="0,0,10,0"
+                                                TabIndex="1"
+                                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                                Click="LoadFolderBtn_Click">
+                                            <Button.ToolTip>
+                                                <TextBlock VerticalAlignment="Center"
+                                                           Background="Transparent"
+                                                           FontFamily="{DynamicResource DefaultFont}" FontSize="12"
+                                                           Foreground="{DynamicResource TextStrong}"
+                                                           TextTrimming="CharacterEllipsis">
+                                                    <Run Text="Open Folder(s) [Ctrl+O]"/>
+                                                    <LineBreak/>
+                                                    <LineBreak/>
+                                                    <Run Text="Open Folder(s) recursively [Ctrl+Shift+O]"/>
+                                                    <LineBreak/>
+                                                    <Run Text="Add Folder(s) [Ctrl+Alt+O]"/>
+                                                    <Run Text="Add Folder(s) recursively [Ctrl+Shift+Alt+O]"/>
+                                                </TextBlock>
+                                            </Button.ToolTip>
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{DynamicResource OpenFolderIcon}"
+                                                        Width="20"
+                                                        Stretch="Uniform"/>
+                                                <TextBlock Text="Open" FontFamily="{DynamicResource DefaultFont}" FontSize="15" Margin="10,0" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                        <!-- Reload folder Button -->
+                                        <Button x:Name="ReloadFolderBtn"
+                                                Style="{DynamicResource GrayButton}"
+                                                IsEnabled="{Binding IsLoading, Converter={StaticResource InverseBoolConvertor}}"
+                                                Padding="10,5"
+                                                TabIndex="2"
+                                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                                Click="ReloadFolderBtn_Click">
+                                            <Button.ToolTip>
+                                                <TextBlock VerticalAlignment="Center"
+                                                           Background="Transparent"
+                                                           FontFamily="{DynamicResource DefaultFont}" FontSize="12"
+                                                           Foreground="{DynamicResource TextStrong}"
+                                                           TextTrimming="CharacterEllipsis">
+                                                    <Run Text="Refersh Folder(s) [F5]"/>
+                                                    <LineBreak/>
+                                                    <LineBreak/>
+                                                    <Run Text="Reload Folder(s) [Shift+F5]"/>
+                                                    <LineBreak/>
+                                                    <LineBreak/>
+                                                    <Run Text="Refresh Folder(s) and link raws [Alt+F5]"/>
+                                                </TextBlock>
+                                            </Button.ToolTip>
+
+                                            <Image Source="{DynamicResource ReloadIcon}"
+                                                   Width="20"
+                                                   Stretch="Uniform"/>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                </DockPanel>
+
+                                <!-- Seperator -->
+                                <Rectangle Stroke="{DynamicResource TextStrong}" Height="2"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

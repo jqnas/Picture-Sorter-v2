@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Picture_Sorter</RootNamespace>
+    <AssemblyName>Picture-Sorter v2</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\Picture.ico</ApplicationIcon>
+    <AssemblyTitle>Pciture Sorter v2</AssemblyTitle>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Icons\*.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Icons\DarkMode\Copy.png" />
+    <None Remove="Icons\DarkMode\DeleteImage.png" />
+    <None Remove="Icons\DarkMode\Edit.png" />
+    <None Remove="Icons\DarkMode\ImageDate.png" />
+    <None Remove="Icons\DarkMode\ImageResolution.png" />
+    <None Remove="Icons\DarkMode\ImageSize.png" />
+    <None Remove="Icons\DarkMode\Mark.png" />
+    <None Remove="Icons\DarkMode\Move-Down.png" />
+    <None Remove="Icons\DarkMode\Move-Up.png" />
+    <None Remove="Icons\DarkMode\Move.png" />
+    <None Remove="Icons\DarkMode\OpenFolder.png" />
+    <None Remove="Icons\DarkMode\Plus.png" />
+    <None Remove="Icons\DarkMode\Redo.png" />
+    <None Remove="Icons\DarkMode\Reload.png" />
+    <None Remove="Icons\DarkMode\Rename.png" />
+    <None Remove="Icons\DarkMode\ResizeGrip.png" />
+    <None Remove="Icons\DarkMode\Rotate-Image-left.png" />
+    <None Remove="Icons\DarkMode\Rotate-Image-right.png" />
+    <None Remove="Icons\DarkMode\Search.png" />
+    <None Remove="Icons\DarkMode\SideView.png" />
+    <None Remove="Icons\DarkMode\SplitView.png" />
+    <None Remove="Icons\DarkMode\Theme-Switcher.png" />
+    <None Remove="Icons\DarkMode\ThumbnailView.png" />
+    <None Remove="Icons\DarkMode\Undo.png" />
+    <None Remove="Icons\DarkMode\ZoomIn.png" />
+    <None Remove="Icons\DarkMode\ZoomOut.png" />
+    <None Remove="Icons\Default.png" />
+    <None Remove="Icons\LightMode\Copy.png" />
+    <None Remove="Icons\LightMode\DeleteImage.png" />
+    <None Remove="Icons\LightMode\Edit.png" />
+    <None Remove="Icons\LightMode\ImageDate.png" />
+    <None Remove="Icons\LightMode\ImageResolution.png" />
+    <None Remove="Icons\LightMode\ImageSize.png" />
+    <None Remove="Icons\LightMode\Mark.png" />
+    <None Remove="Icons\LightMode\Move-Down.png" />
+    <None Remove="Icons\LightMode\Move-Up.png" />
+    <None Remove="Icons\LightMode\Move.png" />
+    <None Remove="Icons\LightMode\OpenFolder.png" />
+    <None Remove="Icons\LightMode\Plus.png" />
+    <None Remove="Icons\LightMode\Redo.png" />
+    <None Remove="Icons\LightMode\Reload.png" />
+    <None Remove="Icons\LightMode\Rename.png" />
+    <None Remove="Icons\LightMode\ResizeGrip.png" />
+    <None Remove="Icons\LightMode\Rotate-Image-left.png" />
+    <None Remove="Icons\LightMode\Rotate-Image-right.png" />
+    <None Remove="Icons\LightMode\Search.png" />
+    <None Remove="Icons\LightMode\SideView.png" />
+    <None Remove="Icons\LightMode\SplitView.png" />
+    <None Remove="Icons\LightMode\Theme-Switcher.png" />
+    <None Remove="Icons\LightMode\ThumbnailView.png" />
+    <None Remove="Icons\LightMode\Undo.png" />
+    <None Remove="Icons\LightMode\ZoomIn.png" />
+    <None Remove="Icons\LightMode\ZoomOut.png" />
+    <None Remove="Icons\Picture.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DarkMode\SplitView.png" />
+    <Resource Include="Icons\LightMode\SideView.png" />
+    <Resource Include="Icons\LightMode\SplitView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DarkMode\Edit.png" />
+    <Resource Include="Icons\LightMode\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LinkingMountains.ImageZoom" Version="1.0.3" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DarkMode\Close.png" />
+    <Resource Include="Icons\DarkMode\Copy.png" />
+    <Resource Include="Icons\DarkMode\DeleteImage.png" />
+    <Resource Include="Icons\DarkMode\ImageDate.png" />
+    <Resource Include="Icons\DarkMode\ImageResolution.png" />
+    <Resource Include="Icons\DarkMode\ImageSize.png" />
+    <Resource Include="Icons\DarkMode\Mark.png" />
+    <Resource Include="Icons\DarkMode\Maximize.png" />
+    <Resource Include="Icons\DarkMode\Minimize.png" />
+    <Resource Include="Icons\DarkMode\Move-Down.png" />
+    <Resource Include="Icons\DarkMode\Move-Up.png" />
+    <Resource Include="Icons\DarkMode\Move.png" />
+    <Resource Include="Icons\DarkMode\Next-Image.png" />
+    <Resource Include="Icons\DarkMode\OpenFolder.png" />
+    <Resource Include="Icons\DarkMode\Plus.png" />
+    <Resource Include="Icons\DarkMode\Previus-Image.png" />
+    <Resource Include="Icons\DarkMode\Redo.png" />
+    <Resource Include="Icons\DarkMode\Reload.png" />
+    <Resource Include="Icons\DarkMode\Rename.png" />
+    <Resource Include="Icons\DarkMode\ResizeGrip.png" />
+    <Resource Include="Icons\DarkMode\Rotate-Image-left.png" />
+    <Resource Include="Icons\DarkMode\Rotate-Image-right.png" />
+    <Resource Include="Icons\DarkMode\Search.png" />
+    <Resource Include="Icons\DarkMode\SideView.png" />
+    <Resource Include="Icons\DarkMode\Theme-Switcher.png" />
+    <Resource Include="Icons\DarkMode\ThumbnailView.png" />
+    <Resource Include="Icons\DarkMode\Undo.png" />
+    <Resource Include="Icons\DarkMode\ZoomIn.png" />
+    <Resource Include="Icons\DarkMode\ZoomOut.png" />
+    <Resource Include="Default.png" />
+    <Resource Include="Icons\LightMode\Close.png" />
+    <Resource Include="Icons\LightMode\Copy.png" />
+    <Resource Include="Icons\LightMode\DeleteImage.png" />
+    <Resource Include="Icons\LightMode\ImageDate.png" />
+    <Resource Include="Icons\LightMode\ImageResolution.png" />
+    <Resource Include="Icons\LightMode\ImageSize.png" />
+    <Resource Include="Icons\LightMode\Mark.png" />
+    <Resource Include="Icons\LightMode\Maximize.png" />
+    <Resource Include="Icons\LightMode\Minimize.png" />
+    <Resource Include="Icons\LightMode\Move-Down.png" />
+    <Resource Include="Icons\LightMode\Move-Up.png" />
+    <Resource Include="Icons\LightMode\Move.png" />
+    <Resource Include="Icons\LightMode\Next-Image.png" />
+    <Resource Include="Icons\LightMode\OpenFolder.png" />
+    <Resource Include="Icons\LightMode\Plus.png" />
+    <Resource Include="Icons\LightMode\Previus-Image.png" />
+    <Resource Include="Icons\LightMode\Redo.png" />
+    <Resource Include="Icons\LightMode\Reload.png" />
+    <Resource Include="Icons\LightMode\Rename.png" />
+    <Resource Include="Icons\LightMode\ResizeGrip.png" />
+    <Resource Include="Icons\LightMode\Rotate-Image-left.png" />
+    <Resource Include="Icons\LightMode\Rotate-Image-right.png" />
+    <Resource Include="Icons\LightMode\Search.png" />
+    <Resource Include="Icons\LightMode\Theme-Switcher.png" />
+    <Resource Include="Icons\LightMode\ThumbnailView.png" />
+    <Resource Include="Icons\LightMode\Undo.png" />
+    <Resource Include="Icons\LightMode\ZoomIn.png" />
+    <Resource Include="Icons\LightMode\ZoomOut.png" />
+    <Resource Include="Icons\Picture.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+</Project>

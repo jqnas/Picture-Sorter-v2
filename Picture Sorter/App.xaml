@@ -1,0 +1,23 @@
+﻿<Application x:Class="Picture_Sorter.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Picture_Sorter"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Ressources/General.xaml"/>
+                <ResourceDictionary Source="Ressources/WindowStyle.xaml"/>
+                <ResourceDictionary Source="Ressources/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Ressources/ScrollViewerStyle.xaml"/>
+                <ResourceDictionary Source="Ressources/SliderStyles.xaml"/>
+                <ResourceDictionary Source="Ressources/ListBoxStyles.xaml"/>
+                <ResourceDictionary Source="Ressources/ComboBoxStyles.xaml"/>
+                <ResourceDictionary Source="Ressources/CheckBoxStyles.xaml"/>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

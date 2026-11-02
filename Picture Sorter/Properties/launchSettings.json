@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Picture Sorter": {
+      "commandName": "Project",
+      "commandLineArgs": "//--light-mode //--mode-move //--full-resolution",
+      "workingDirectory": "D:\\temp\\Bilder\\PictureSorter"
+    }
+  }
+}
